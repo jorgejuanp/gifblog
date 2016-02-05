@@ -1,5 +1,8 @@
 <h1>Posts over 5 votes</h1>
 <%= link_to("Create new post", new_post_path) %>
+<%= link_to("Best Rated", posts_path) %>
+<%= link_to("Most recent", sort_by_date_post_path) %>
+<%= link_to("Low rated", low_rated_index_post_path) %>
 
 <ul>
   <%= @posts.each do |p| %>

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       put :upvote
+      get :sort_by_date
+      get :sort_by_votes
+      get :low_rated_index
     end
   end
 

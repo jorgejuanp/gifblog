@@ -1,7 +1,20 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.where('votes >= ?', 5)
+    # @posts = Post.all
   end
+
+  # def sort_by_date
+  #   @posts = Post.all.order(created_at: :desc)
+  # end
+  #
+  # def sort_by_votes
+  #   @posts = Post.all.order(votes: :desc)
+  # end
+  #
+  # def low_rated_index
+  #   @posts = Post.where('votes < ?', 5)
+  # end
 
   def new
     @post = Post.new
