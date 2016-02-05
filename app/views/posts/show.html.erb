@@ -1,2 +1,10 @@
-<h1>Posts#show</h1>
+<%= link_to("Home", posts_path) %><br>
+
+<h1><%= @post.title %></h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+
+<%= image_tag @post.gif %>
+<p>Loves: <%= @post.votes %></p>
+
+<!-- Make the votes a property of the Post model and create an action in the Posts controller to increase the vote count. -->
+<%= button_to 'Vote', upvote_post_path(@post), method: :put %>
